@@ -26,7 +26,7 @@ if sys.version_info < (2, 7,):
 extras_require = {'test': test_requires}
 
 long_description = '\n\n'.join([
-        read('README'),
+        read('README.md'),
         read('docs', 'changes.rst'),
 ])
 
