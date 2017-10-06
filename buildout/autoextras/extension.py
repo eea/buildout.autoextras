@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import pkg_resources
-from zc.buildout.easy_install import logger as installer_logger, \
-    _log_requirement, Installer
+from zc.buildout.easy_install import logger as installer_logger, Installer
 
 
 class Extension(object):
@@ -60,7 +59,7 @@ class Extension(object):
                 ws = working_set
 
             for requirement in requirements:
-                for dist in installer._get_dist(requirement, ws, installer._always_unzip):
+                for dist in installer._get_dist(requirement, ws):
                     ws.add(dist)
                     installer._maybe_add_setuptools(ws, dist)
 
@@ -104,9 +103,8 @@ class Extension(object):
                                 installer_logger.debug('Getting required %r', str(req))
                             else:
                                 installer_logger.debug('Adding required %r', str(req))
-                            _log_requirement(ws, req)
-                            for dist in installer._get_dist(req,
-                                                            ws, installer._always_unzip):
+                            #self._log_requirement(ws, req)
+                            for dist in installer._get_dist(req, ws):
                                 ws.add(dist)
                                 installer._maybe_add_setuptools(ws, dist)
 

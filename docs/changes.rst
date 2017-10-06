@@ -8,6 +8,13 @@ Changelog
 
    - change message [author]
 
+
+1.2.rc1 (2017-10-06)
+--------------------
+
+- Update to work with zc.buildout 2.9.3
+  [avoinea]
+
 1.1 (2011-10-25)
 ----------------
 
