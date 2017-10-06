@@ -9,7 +9,7 @@ Changelog
    - change message [author]
 
 
-1.2.rc1 (2017-10-06)
+1.2.rc2 (2017-10-06)
 --------------------
 
 - Update to work with zc.buildout 2.9.3

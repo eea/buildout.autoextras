@@ -91,7 +91,7 @@ class Extension(object):
                         try:
                             dist = best[req.key] = env.best_match(req, ws)
                         except pkg_resources.VersionConflict, err:
-                            raise VersionConflict(err, ws)
+                            raise pkg_resources.VersionConflict(err, ws)
                         if dist is None or (
                             dist.location in installer._site_packages and not
                             installer.allow_site_package_egg(dist.project_name)):
@@ -118,7 +118,7 @@ class Extension(object):
 
                 if dist not in req:
                     # Oops, the "best" so far conflicts with a dependency.
-                    raise VersionConflict(
+                    raise pkg_resources.VersionConflict(
                         pkg_resources.VersionConflict(dist, req), ws)
                 requirements.extend(dist.requires(extras)[::-1])
                 processed[req] = True
