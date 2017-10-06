@@ -11,7 +11,7 @@ def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
 name = 'buildout.autoextras'
-version = '1.1'
+version = '1.2.rc1'
 
 install_requires = [
     'setuptools',
